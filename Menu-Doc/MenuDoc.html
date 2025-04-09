@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tổng quan menu */
+.menu {
+    width: 200px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+}
+
+/* Tiêu đề CATEGORIES */
+.menu-title {
+    background-color: #FFCC33;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Menu cấp 1 */
+.menu-level-1 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-level-1 > li {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid #999999;
+    position: relative; /* Cần để định vị menu cấp 2 */
+}
+
+.menu-level-1 > li:hover {
+    background-color: #f0f0f0; /* Hiệu ứng hover */
+}
+
+/* Menu cấp 2 (ẩn mặc định) */
+.menu-level-2 {
+    display: none;
+    position: absolute;
+    left: 100%; /* Menu cấp 2 hiển thị bên phải menu cấp 1 */
+    top: 0;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #999999;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    z-index: 1000;
+}
+
+.menu-level-2 > li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative; /* Cần để định vị menu cấp 3 */
+}
+
+.menu-level-2 > li:hover {
+    background-color: #f0f0f0; /* Hiệu ứng hover menu cấp 2 */
+}
+
+/* Menu cấp 3 (ẩn mặc định) */
+.menu-level-3 {
+    display: none;
+    position: absolute;
+    left: 100%; /* Menu cấp 3 hiển thị bên phải menu cấp 2 */
+    top: 0;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #999999;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    z-index: 1000;
+}
+
+.menu-level-3 > li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-level-3 > li:hover {
+    background-color: #f0f0f0; /* Hiệu ứng hover menu cấp 3 */
+}
+
+/* Hiển thị menu cấp 2 khi hover menu cấp 1 */
+.has-submenu:hover .menu-level-2 {
+    display: block;
+}
+
+/* Hiển thị menu cấp 3 khi hover menu cấp 2 */
+.has-submenu-2:hover .menu-level-3 {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <!-- Tiêu đề CATEGORIES -->
+        <div class="menu-title">CATEGORIES</div>
+        <!-- Menu cấp 1 -->
+        <ul class="menu-level-1">
+            <li>Roses</li>
+            <li class="has-submenu">
+                Flower Basket
+                <ul class="menu-level-2">
+                    <li class="has-submenu-2">
+                        Macs
+                        <ul class="menu-level-3">
+                            <li>MacBook Pro</li>
+                            <li>MacBook Air</li>
+                        </ul>
+                    </li>
+                    <li>Windows</li>
+                </ul>
+            </li>
+            <li>Gerberas</li>
+            <li>Orchids</li>
+        </ul>
+    </div>
+</body>
+</html>

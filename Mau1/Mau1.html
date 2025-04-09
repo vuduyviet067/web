@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff3399;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .cart {
+            background-color: #ff3399;
+            padding: 5px 10px;
+            color: white;
+        }
+
+        .cart:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Menu */
+        .menu {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .menu ul li {
+            position: relative;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+        }
+
+        .menu ul li a.active, .menu ul li a:hover {
+            background-color: #ff3399;
+        }
+
+        /* Submenu */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .submenu li a {
+            color: black;
+            padding: 10px;
+            display: block;
+            background-color: white;
+        }
+
+        .submenu li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            text-align: center;
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .product img {
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .product img:hover {
+            transform: scale(1.1);
+        }
+
+        .product h3 {
+            color: white;
+        }
+
+        .product:hover {
+            background-color: #ffff66;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SHOP</div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
+        </div>
+        <div class="cart">0 Item(s) - $0.00</div>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Men ▼</a>
+                <ul class="submenu">
+                    <li><a href="#">Clothing (0)</a></li>
+                    <li><a href="#">Coats (0)</a></li>
+                    <li><a href="#">T-Shirts (0)</a></li>
+                    <li><a href="#">Tennis (0)</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Jewelry</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <div class="product">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480561812_1136138844662162_7025757651886110877_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeFfx3DuWQFYaLEnw0czJ2Jm3yV29vQ7wNjfJXb29DvA2H_kiW_12qTbupfoV2jWv5dvQVJNlQFuD_L8GjHs6MhJ&_nc_ohc=M2hFR8lQMHEQ7kNvgFqQ60a&_nc_oc=AdiaLvMgNwFxEVK41RfQKTXm19hge0AOP4e8A3uka9Vo1BgrFqOugv88nKvtOlKaJUo&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=A8uFi7q7i_DzbteUtKcFVJV&oh=00_AYDOeQGwK-bzcEqV8IAIsOmfrbvvmma090xN8uZ7wkzA6Q&oe=67BBFA9D" alt="Apple Cinema 30">
+            <h3>Apple Cinema 30"</h3>
+            <p class="price">$110.00 <span class="old-price">$122.00</span></p>
+        </div>
+        <div class="product">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480561812_1136138844662162_7025757651886110877_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeFfx3DuWQFYaLEnw0czJ2Jm3yV29vQ7wNjfJXb29DvA2H_kiW_12qTbupfoV2jWv5dvQVJNlQFuD_L8GjHs6MhJ&_nc_ohc=M2hFR8lQMHEQ7kNvgFqQ60a&_nc_oc=AdiaLvMgNwFxEVK41RfQKTXm19hge0AOP4e8A3uka9Vo1BgrFqOugv88nKvtOlKaJUo&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=A8uFi7q7i_DzbteUtKcFVJV&oh=00_AYDOeQGwK-bzcEqV8IAIsOmfrbvvmma090xN8uZ7wkzA6Q&oe=67BBFA9D" alt="Canon EOS 5D">
+            <h3>Canon EOS 5D</h3>
+            <p class="price">$98.00 <span class="old-price">$122.00</span></p>
+        </div>
+        <div class="product">
+            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480561812_1136138844662162_7025757651886110877_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeFfx3DuWQFYaLEnw0czJ2Jm3yV29vQ7wNjfJXb29DvA2H_kiW_12qTbupfoV2jWv5dvQVJNlQFuD_L8GjHs6MhJ&_nc_ohc=M2hFR8lQMHEQ7kNvgFqQ60a&_nc_oc=AdiaLvMgNwFxEVK41RfQKTXm19hge0AOP4e8A3uka9Vo1BgrFqOugv88nKvtOlKaJUo&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=A8uFi7q7i_DzbteUtKcFVJV&oh=00_AYDOeQGwK-bzcEqV8IAIsOmfrbvvmma090xN8uZ7wkzA6Q&oe=67BBFA9D" alt="Canon EOS 5D">
+            <h3>Canon EOS 5D</h3>
+            <p class="price">$98.00 <span class="old-price">$122.00</span></p>
+        </div>
+    </section>
+</body>
+</html>

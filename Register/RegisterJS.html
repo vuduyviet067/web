@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <form id="registerForm">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address"><br><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="text" id="password" name="password"><br><br>
+
+        <label for="confirmPassword">Xác nhận mật khẩu:</label>
+        <input type="text" id="confirmPassword" name="confirmPassword"><br><br>
+
+        <button type="button" onclick="validateForm()">Đăng ký</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            const usernameRegex = /^[A-Za-z0-9]+$/; // Không cho phép ký tự đặc biệt
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Định dạng email
+            const phoneRegex = /^\d{10}$/; // Chỉ cho phép số và phải có đúng 10 chữ số
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Mật khẩu bảo mật
+
+            let errors = [];
+
+            if (!usernameRegex.test(username)) {
+                errors.push("Tên đăng nhập không được chứa ký tự đặc biệt.");
+            }
+
+            if (!emailRegex.test(email)) {
+                errors.push("Email không hợp lệ.");
+            }
+
+            if (!phoneRegex.test(phone)) {
+                errors.push("Số điện thoại phải có đúng 10 chữ số.");
+            }
+
+            if (address === '') {
+                errors.push("Địa chỉ không được để trống.");
+            }
+
+            if (!passwordRegex.test(password)) {
+                errors.push("Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.");
+            }
+
+            if (password !== confirmPassword) {
+                errors.push("Mật khẩu xác nhận không khớp.");
+            }
+
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return;
+            }
+
+            alert("Đăng ký thành công!");
+        }
+    </script>
+</body>
+</html>

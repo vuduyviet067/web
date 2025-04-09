@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập chuỗi <input type="text" name="chuoi" id="chuoi"><br>
+    Số từ có 4 ký tự: <input type="text" name="soTu" id="soTu"><br>
+    <button onclick="tim()">Tìm</button>
+    <button onclick="huy()">Huy bo</button>
+    <script>
+        function tim(){
+            var chuoi = document.getElementById('chuoi').value;
+            var soTu = document.getElementById('soTu').value;
+            var arr = chuoi.split(' ');
+            var dem = 0;
+            for (var i = 0; i < arr.length; i++){
+                if (arr[i].length == 4){
+                    dem++;
+                }
+            }
+            document.getElementById('soTu').value = dem;
+        }
+        function huy(){
+            document.getElementById('chuoi').value = '';
+            document.getElementById('soTu').value = '';
+        }
+    </script>
+</body>
+</html>

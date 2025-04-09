@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+    
+</head>
+<body>
+    <form id="loginForm">
+        <label for="fullName">Họ tên:</label>
+        <input type="text" id="fullName" name="fullName"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="text" id="password" name="password"><br><br>
+
+        <button type="submit">Đăng nhập</button>
+    </form>
+    <script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('password').value;
+
+            const nameRegex = /^[A-Za-z\s]+$/; // Chỉ cho phép chữ cái và khoảng trắng
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Định dạng email
+            const phoneRegex = /^\d{10}$/; // Chỉ cho phép số và phải có đúng 10 chữ số
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Mật khẩu bảo mật
+
+            let errors = [];
+
+            if (!nameRegex.test(fullName)) {
+                errors.push("Họ tên chỉ được chứa chữ cái và khoảng trắng.");
+            }
+
+            if (!emailRegex.test(email)) {
+                errors.push("Email không hợp lệ.");
+            }
+
+            if (!phoneRegex.test(phone)) {
+                errors.push("Số điện thoại phải có đúng 10 chữ số.");
+            }
+
+            if (!passwordRegex.test(password)) {
+                errors.push("Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.");
+            }
+
+            if (errors.length > 0) {
+                alert(errors.join("\n"));
+                return;
+            }
+
+            alert("Đăng nhập thành công!");
+        });
+    </script>
+</body>
+</html>

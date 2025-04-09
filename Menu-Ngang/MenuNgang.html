@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Ngang 3 Cấp</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        li {
+            position: relative;
+        }
+
+        li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        li:hover > ul {
+            display: block;
+        }
+
+        li ul li {
+            display: block;
+            width: 200px;
+        }
+
+        li ul li ul {
+            left: 100%;
+            top: 0;
+        }
+
+        li ul li a {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Menu 1</a>
+            <ul>
+                <li><a href="#">Submenu 1-1</a>
+                    <ul>
+                        <li><a href="#">Submenu 1-1-1</a></li>
+                        <li><a href="#">Submenu 1-1-2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Submenu 1-2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Menu 2</a>
+            <ul>
+                <li><a href="#">Submenu 2-1</a></li>
+                <li><a href="#">Submenu 2-2</a>
+                    <ul>
+                        <li><a href="#">Submenu 2-2-1</a></li>
+                        <li><a href="#">Submenu 2-2-2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Menu 3</a>
+            <ul>
+                <li><a href="#">Submenu 3-1</a></li>
+                <li><a href="#">Submenu 3-2</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

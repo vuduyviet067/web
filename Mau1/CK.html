@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiến Sky - fan j97</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .logo {
+            font-size: 2em;
+            color: #FB758D;
+            user-select: none;
+        }
+        .item {
+            background-color: #FB758D;
+            text-align: center;
+            display: block;
+            width: 150px;
+            height: 30px;
+            color: white; /* Ensure the text color is white by default */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item:hover {
+            background-color: yellow; /* Change background color to yellow on hover */
+            color: red; /* Change text color to red on hover */
+        }
+        .menu ul {
+            list-style-type: none; /* Remove bullets from the list */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu ul li {
+            position: relative;
+            flex: 1; /* Ensure the list items are evenly spaced */
+            text-align: center; /* Center the text within each list item */
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            display: block; /* Ensure the link covers the entire list item */
+            padding: 10px; /* Add padding for better spacing */
+        }
+
+        .menu ul li a:hover {
+            background-color: #FB758D; /* Change background color to pink on hover */
+        }
+
+        .menu ul li ul.sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+            list-style: none;
+            z-index: 1000;
+        }
+
+        .menu ul li:hover ul.sub-menu {
+            display: block;
+        }
+
+        .menu ul li ul.sub-menu li {
+            width: 200px;
+        }
+
+        .menu ul li ul.sub-menu li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu ul li ul.sub-menu li a:hover {
+            background-color: #FB758D; /* Change background color to pink on hover */
+        }
+        .menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-content .icon select {
+            background-color: white;
+            color: gray;
+            padding: 8px;
+            cursor: pointer;
+            border: 1px solid gray; 
+        }
+        .button-menu button {
+            background-color: white;
+            color: gray;
+            padding: 8px;
+            cursor: pointer;
+            border: 1px solid gray;  
+        }
+        .button-menu button:hover {
+            background-color: black;
+            color: white;
+        }
+        .menu-img table th {
+            background-color: #046E85;
+            color: white;
+            padding: 10px;
+        }
+        .menu-img table img {
+            transition: transform 0.3s ease; /* Smooth transition for the transform property */
+        }
+        .menu-img table img:hover {
+            transform: scale(1.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer a {
+            color: #FB758D;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h2>SHOP</h2>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <select id="categories" name="categories">
+                <option value="categories">Categories</option>
+                <option value="science">Science</option>
+                <option value="arts">Arts</option>
+                <option value="sports">Sports</option>
+            </select>
+        </div>
+        <div class="item">
+            <p>0 item($) - $0.00</p>
+        </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a>
+                <ul class="sub-menu">
+                    <li><a href="#"><ins><big>Clothing(0)</big></ins></a></li>
+                    <li><a href="#">Coats(0)</a></li>
+                    <li><a href="#">T-shirts(0)</a></li>
+                    <li><a href="#">Tennis(0)</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Jewlry</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">TheGirlRacingBycycle</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="menu-content">
+            <div class="icon">
+                <img src="assets/imgck/1.jpg" alt="">
+                <img src="assets/imgck/2.jpg" alt="">
+                <select id="default" name="default">
+                    <option value="default">Default</option>
+                    <option value="default">Lmao</option>
+                </select>
+                <select id="number" name="number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div class="button-menu">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>></button>
+                <button>>|</button>
+            </div>
+        </div>
+        <div class="menu-img">
+            <table>
+                <tr>
+                    <td><img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480550856_122180954984058079_1923573047192444351_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEp4RArMluXs2qJaS8d09GHvjuE-oyugTu-O4T6jK6BO-WpC939EinWGEXpgnj_U00ZJBlvMaeZwGUjknyNRacZ&_nc_ohc=3fhrhtBHeIoQ7kNvgE6YMaX&_nc_oc=AdjCIZA500ReFM1hBK67pBViS6jWF-7QdTr3nzF5YvdP0mtMbuM_g1AV5ao2j2D4c9A&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=Avf8s_aPKVU9CYcBNVmFaQB&oh=00_AYCjpkCk7MsHPEh-X_5izoC1dVBGG8cS1-QHBWj5BPiXCg&oe=67BD2AEF" width="300px" height="400px"></td>
+                    <td><img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480550856_122180954984058079_1923573047192444351_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEp4RArMluXs2qJaS8d09GHvjuE-oyugTu-O4T6jK6BO-WpC939EinWGEXpgnj_U00ZJBlvMaeZwGUjknyNRacZ&_nc_ohc=3fhrhtBHeIoQ7kNvgE6YMaX&_nc_oc=AdjCIZA500ReFM1hBK67pBViS6jWF-7QdTr3nzF5YvdP0mtMbuM_g1AV5ao2j2D4c9A&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=Avf8s_aPKVU9CYcBNVmFaQB&oh=00_AYCjpkCk7MsHPEh-X_5izoC1dVBGG8cS1-QHBWj5BPiXCg&oe=67BD2AEF" width="300px" height="400px"></td>
+                    <td><img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/480550856_122180954984058079_1923573047192444351_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEp4RArMluXs2qJaS8d09GHvjuE-oyugTu-O4T6jK6BO-WpC939EinWGEXpgnj_U00ZJBlvMaeZwGUjknyNRacZ&_nc_ohc=3fhrhtBHeIoQ7kNvgE6YMaX&_nc_oc=AdjCIZA500ReFM1hBK67pBViS6jWF-7QdTr3nzF5YvdP0mtMbuM_g1AV5ao2j2D4c9A&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_gid=Avf8s_aPKVU9CYcBNVmFaQB&oh=00_AYCjpkCk7MsHPEh-X_5izoC1dVBGG8cS1-QHBWj5BPiXCg&oe=67BD2AEF" width="300px" height="400px"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <center>Apple Cinema 30"</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$110.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                    <th>
+                        <center>Cannon EOS 5D</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$98.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                    <th>
+                        <center>Cannon EOS 5D</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$98.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 SHOP. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

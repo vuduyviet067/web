@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiến Sky - fan j97</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .logo {
+            font-size: 2em;
+            color: #FB758D;
+            user-select: none;
+        }
+        .item {
+            background-color: #FB758D;
+            text-align: center;
+            display: block;
+            width: 150px;
+            height: 30px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item:hover {
+            background-color: yellow;
+        }
+        .menu ul {
+            height: 50px;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+        }
+        .menu ul li select {
+            background-color: black;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .menu ul li:hover {
+            background-color: #FB758D;
+        }
+        .menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-content .icon select {
+            background-color: white;
+            color: gray;
+            padding: 8px;
+            cursor: pointer;
+            border: 1px solid gray; 
+        }
+        .button-menu button {
+            background-color: white;
+            color: gray;
+            padding: 8px;
+            cursor: pointer;
+            border: 1px solid gray;  
+        }
+        .button-menu button:hover {
+            background-color: black;
+            color: white;
+        }
+        .menu-img table th {
+            background-color: #046E85;
+            color: white;
+            padding: 10px;
+        }
+        .menu-img table img:hover {
+            width: 150%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h2>SHOP</h2>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <select id="categories" name="categories">
+                <option value="categories">Categories</option>
+                <option value="science">Science</option>
+                <option value="arts">Arts</option>
+                <option value="sports">Sports</option>
+            </select>
+        </div>
+        <div class="item">
+            <p style="color: #fff;">0 item($) - $0.00</p>
+        </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <select id="women" name="women">
+                    <option value="women">Women</option>
+                    <option value="women">Lmao</option>
+                </select>
+            </li>
+            <li>
+                <select id="men" name="men">
+                    <option value="men">Men</option>
+                </select>
+            </li>
+            <li><a href="#">Jewelry</a></li>
+            <li><a href="#">Book</a></li>
+            <li>
+                <select id="clothing" name="clothing">
+                    <option value="clothing">Clothing</option>
+                </select>
+            </li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Blog</a></li>
+            <li>
+                <select id="the-girl-racing-bicycle" name="the-girl-racing-bicycle">
+                    <option value="the-girl-racing-bicycle">The Girl Racing Bicycle</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="menu-content">
+            <div class="icon">
+                <img src="assets/imgck/1.jpg" alt="">
+                <img src="assets/imgck/2.jpg" alt="">
+                <select id="default" name="default">
+                    <option value="default">Default</option>
+                    <option value="default">Lmao</option>
+                </select>
+                <select id="number" name="number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div class="button-menu">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>></button>
+                <button>>|</button>
+            </div>
+        </div>
+        <div class="menu-img">
+            <table>
+                <tr>
+                    <td><img src="assets/imgck/3.jpg" width="300px" height="400px"></td>
+                    <td><img src="assets/imgck/3.jpg" width="300px" height="400px"></td>
+                    <td><img src="assets/imgck/3.jpg" width="300px" height="400px"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <center>Apple Cinema 30"</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$110.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                    <th>
+                        <center>Cannon EOS 5D</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$98.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                    <th>
+                        <center>Cannon EOS 5D</center>
+                        <center>sao</center>
+                        <b style="color: #FB758D;">$98.00</b>
+                        <b><small><del>$122.00</del></small></b>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

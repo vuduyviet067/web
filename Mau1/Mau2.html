@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #FF0971;
+            border-radius: 7px;
+        }
+
+        .menu-left ul {
+            display: inline-flex;
+            list-style: none;
+        }
+
+        .search-right {
+            display: inline-flex;
+        }
+
+        .menu-left ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .menu-title {
+            background-color: #FFCC33;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            border-radius: 7px;
+        }
+
+        .menu-level-1 {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #999999;
+        }
+        .menu-level-1 > li {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-bottom: 1px solid #999999;
+            position: relative; /* Cần để định vị menu cấp 2 */
+        }
+        .menu-level-1 > li:hover {
+            background-color: #f0f0f0; /* Hiệu ứng hover */
+            cursor: pointer;
+        }
+        .menu-level-2 {
+            display: none;
+            position: absolute;
+            left: 100%; /* Menu cấp 2 hiển thị bên phải menu cấp 1 */
+            top: 0;
+            list-style: none;
+            background-color: white;
+            border: 1px solid #999999;
+            margin: 0;
+            padding: 0;
+            width: 150px;
+            z-index: 1000;
+        }
+        .menu-level-1 > li:hover .menu-level-2{
+            display: block;
+        }
+        .menu-level-2 > li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-level-2 > li:hover {
+            background-color: #f0f0f0; /* Hiệu ứng hover menu cấp 2 */
+        }
+        .menu-level-2 a{
+            text-decoration: none;
+            list-style: none;
+            color: #999999;
+        }
+        .item{
+            border: 1px solid #EDEDED;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%">
+        <tr>
+            <td class="header" colspan="2">
+                <div class="header-top">
+                    <div class="logo">
+                        <img src="BT/assets/imgck2/1.png" alt="">
+                    </div>
+                    <div class="logo-right">
+                        <table>
+                            <td>
+                                <img src="BT/assets/imgck2/2.png" alt="">
+                            </td>
+                            <td>
+                                <span>Cart</span> <br>
+                                <span style="color: gray;">0 items</span>
+                            </td>
+                        </table>
+                    </div>
+                </div>
+                <div class="menu-header">
+                    <div class="menu-left">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Gift Certificates</a></li>
+                            <li><a href="#">More</a></li>
+                        </ul>
+                    </div>
+                    <div class="search-right">
+                        <input type="text" placeholder="Search"
+                            style="border-radius:  10px 0 0 10px; border: none; padding: 10px;">
+                        <select name="categories" id="categories" style="border: none; border-left: 1px solid gray;">
+                            <option value="categories">Categories</option>
+                            <option value="science">Science</option>
+                            <option value="arts">Arts</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                        <button style="border-radius: 0 10px 10px 0; border : none; background-color: yellow;">Search
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" style="vertical-align: top;">
+                <div class="menu-content">
+                    <!-- Tiêu đề CATEGORIES -->
+                    <div class="menu-title">CATEGORIES</div>
+                    <!-- Menu cấp 1 -->
+                    <ul class="menu-level-1">
+                        <li>Roses</li>
+                        <li class="has-submenu">
+                            Flower Basket
+                            <ul class="menu-level-2">
+                                <li><a href="">Macs</a></li>
+                                <li><a href="">Windows</a></li>
+                            </ul>
+                        </li>
+                        <li>Gerberas</li>
+                        <li>Orchids</li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <table width = 100%>
+                    <tr>
+                        <td>
+                            <table class="item">
+                                <td style="border-right: 1px solid #EDEDED;">
+                                    <img src="BT/assets/imgck2/4.png" alt="">
+                                </td>
+                                <td style="padding: 10px;">
+                                    <p>Aliquam Quaerat Voluptatem</p>
+                                    <p><b style="color: #FF0971;">$110.00</b> <del>$122.00</del></p>
+                                    <button style="background-color: #EDEDED; border:none; border-radius: 5px; padding : 10px;">+ Add to Cart</button>
+                                </td>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="item">
+                                <td style="border-right: 1px solid #EDEDED;">
+                                    <img src="BT/assets/imgck2/4.png" alt="">
+                                </td>
+                                <td style="padding: 10px;">
+                                    <p>Aliquam Quaerat Voluptatem</p>
+                                    <p><b style="color: #FF0971;">$110.00</b> <del>$122.00</del></p>
+                                    <button style="background-color: #EDEDED; border:none; border-radius: 5px; padding : 10px;">+ Add to Cart</button>
+                                </td>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="item">
+                                <td style="border-right: 1px solid #EDEDED;">
+                                    <img src="BT/assets/imgck2/4.png" alt="">
+                                </td>
+                                <td style="padding: 10px;">
+                                    <p>Aliquam Quaerat Voluptatem</p>
+                                    <p><b style="color: #FF0971;">$110.00</b> <del>$122.00</del></p>
+                                    <button style="background-color: #EDEDED; border:none; border-radius: 5px; padding : 10px;">+ Add to Cart</button>
+                                </td>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="item">
+                                <td style="border-right: 1px solid #EDEDED;">
+                                    <img src="BT/assets/imgck2/4.png" alt="">
+                                </td>
+                                <td style="padding: 10px;">
+                                    <p>Aliquam Quaerat Voluptatem</p>
+                                    <p><b style="color: #FF0971;">$110.00</b> <del>$122.00</del></p>
+                                    <button style="background-color: #EDEDED; border:none; border-radius: 5px; padding : 10px;">+ Add to Cart</button>
+                                </td>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table width = 100%>
+                    <td>
+                        <table style="background-color: #BAE7B6;">
+                            <td>
+                                <img src="BT/assets/imgck2/5.png" alt="">
+                            </td>
+                            <td style="padding: 10px;">
+                                <p><b>Seasonal Stock</b></p>
+                                <p>Occassional Items</p>
+                            </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="background-color: #BAE7B6;">
+                            <td>
+                                <img src="BT/assets/imgck2/5.png" alt="">
+                            </td>
+                            <td style="padding: 10px;">
+                                <p><b>Seasonal Stock</b></p>
+                                <p>Occassional Items</p>
+                            </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table style="background-color: #BAE7B6;">
+                            <td>
+                                <img src="BT/assets/imgck2/5.png" alt="">
+                            </td>
+                            <td style="padding: 10px;">
+                                <p><b>Seasonal Stock</b></p>
+                                <p>Occassional Items</p>
+                            </td>
+                        </table>
+                    </td>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div class="bai-2">
+        <b>Họ và tên :</b><input type="text" name="hoTen" id="hoTen">
+        <br>
+        <b>Tên :</b><input type="text" name="ten" id="ten">
+        <br>
+        <button onclick="hienThi()">Hiển thị</button>
+        <button onclick="huyBo()">Huy bo</button>
+    </div>
+    <script>
+        function hienThi(){
+            var hoTen = document.getElementById('hoTen').value;
+            hoTen = hoTen.trim().replace(/\s+/g, " ");
+            var arr = hoTen.split(" ");
+            var hoTenChuanHoa = '';
+            for(var i = 0; i<arr.length; i++){
+                hoTenChuanHoa = hoTenChuanHoa + arr[i]+' ';
+            }
+            hoTenChuanHoa=hoTenChuanHoa.trim();
+            var ten = arr[arr.length-1];
+            document.getElementById('hoTen').value =hoTenChuanHoa;
+            document.getElementById('ten').value = ten;
+        }
+        function huyBo(){
+            document.getElementById('hoTen').value ='';
+            document.getElementById('ten').value ='';
+        }
+    </script>
+</body>
+
+</html>
